@@ -91,7 +91,7 @@ $.Resize = function () {
 
 
 $.LoadImages = function () {
-    $.ImageCount = 3;
+    $.ImageCount = 4;
     $.ImagesLoaded = 0;   
 
 	$.CupidImage = new Image();
@@ -105,6 +105,10 @@ $.LoadImages = function () {
     $.HeartImage = new Image();
 	$.HeartImage.onload = function () { $.ImagesLoaded++; }
 	$.HeartImage.src = 'hearts.png';
+
+    $.BackgroundImage = new Image();
+	$.BackgroundImage.onload = function () { $.ImagesLoaded++; }
+	$.BackgroundImage.src = 'background.png';
 };
 
 $.IsLoading = function () {
@@ -129,10 +133,10 @@ $.GameLoop = function () {
 
 $.ObjectSetup = function(){
 	var point = { 
-		x: $.CanvasBounds.Centre.X - 150,
-		y: $.CanvasBounds.Centre.Y - 110
+		x: $.CanvasBounds.Centre.X - 248,
+		y: $.CanvasBounds.Centre.Y - 202
 	};
-	$.TheCupid = new $.Cupid(point.x, point.y, 300, 220);		
+	$.TheCupid = new $.Cupid(point.x, point.y, 496, 404);		
 	$.ObjectLoaded = true;	
 };
 
@@ -149,5 +153,26 @@ $.UpdateGame = function () {
 
 $.DrawGame = function () {
 	$.Gtx.clearRect($.CanvasBounds.X, $.CanvasBounds.Y, $.CanvasBounds.Width, $.CanvasBounds.Height);
+
+//alert($.CanvasBounds.Width);
+//alert($.CanvasBounds.Height);
+$.Gtx.drawImage(
+    $.BackgroundImage, $.CanvasBounds.X, $.CanvasBounds.Y, $.CanvasBounds.Width, $.CanvasBounds.Height);
+
 	$.TheCupid.Draw();
+    $.DrawText();
+};
+
+$.DrawText = function () {
+    var fontSize = 90;
+    var text = "Happy Valentine's Day";
+    var textWidth = $.Gtx.measureText(text).width;
+    var x = $.CanvasBounds.Centre.X - (textWidth / 2);
+
+    $.Gtx.font = "italic bold " + fontSize.toString() + "px Edwardian";
+    $.Gtx.fillStyle = "black";
+    $.Gtx.fillText(text, x + 3, fontSize + 3);
+
+    $.Gtx.fillStyle = "red";
+    $.Gtx.fillText(text, x, fontSize);
 };

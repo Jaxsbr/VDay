@@ -14,7 +14,7 @@ $.Particle.prototype.SetTexture = function(texture, sourceX, sourceY, sourceW, s
 	this.UseTexture = true;
 
 	this.Texture = texture;	
-	this.TextureFrameIndex = Math.floor($.RandomBetween(0.99, 2.99));
+	this.TextureFrameIndex = 0;//Math.floor($.RandomBetween(0.99, 2.99));
 	this.TextureSourceWidth = sourceW;
 	this.TextureSourceHeight = sourceH;
 };
