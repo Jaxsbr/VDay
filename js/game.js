@@ -96,19 +96,19 @@ $.LoadImages = function () {
 
 	$.CupidImage = new Image();
 	$.CupidImage.onload = function () { $.ImagesLoaded++; }
-	$.CupidImage.src = 'cupido.png';
+	$.CupidImage.src = 'img/cupido.png';
 
     $.ArrowImage = new Image();
 	$.ArrowImage.onload = function () { $.ImagesLoaded++; }
-	$.ArrowImage.src = 'arrows.png';
+	$.ArrowImage.src = 'img/arrows.png';
 
     $.HeartImage = new Image();
 	$.HeartImage.onload = function () { $.ImagesLoaded++; }
-	$.HeartImage.src = 'hearts.png';
+	$.HeartImage.src = 'img/hearts.png';
 
     $.BackgroundImage = new Image();
 	$.BackgroundImage.onload = function () { $.ImagesLoaded++; }
-	$.BackgroundImage.src = 'background.png';
+	$.BackgroundImage.src = 'img/background.png';
 };
 
 $.IsLoading = function () {
