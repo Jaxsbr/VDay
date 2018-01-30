@@ -100,7 +100,7 @@ $.LoadImages = function () {
 
     $.ArrowImage = new Image();
 	$.ArrowImage.onload = function () { $.ImagesLoaded++; }
-	$.ArrowImage.src = 'img/arrows.png';
+	$.ArrowImage.src = 'img/arrow.png';
 
     $.HeartImage = new Image();
 	$.HeartImage.onload = function () { $.ImagesLoaded++; }
